@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+
+  <header>
+    <h1>Panel</h1>
+  </header>
+
+  <main class="panel">
+    <div class="widget" id="widget-1">
+      <span class="tag">Widget 01</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-2">
+      <span class="tag">Widget 02</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-3">
+      <span class="tag">Widget 03</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-4">
+      <span class="tag">Widget 04</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-5">
+      <span class="tag">Widget 05</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-6">
+      <span class="tag">Widget 06</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-7">
+      <span class="tag">Widget 07</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+    <div class="widget" id="widget-8">
+      <span class="tag">Widget 08</span>
+      <span class="placeholder">Contenido pendiente</span>
+    </div>
+  </main>
+
+  <!-- Ejemplo: cargar un widget desde otro archivo JS e insertarlo -->
+  <script src="counter-widget.js"></script>
+  <script>
+    // El widget de contador se monta sobre el widget-1
+    mountCounterWidget('widget-');
+  </script>
+
+</body>
+</html>
