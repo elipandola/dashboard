@@ -164,3 +164,46 @@ header p{
   }
   .widget{ min-height:140px; }
 }
+
+/* --- Estilos del Widget 4: Diccionario en Ingles --- */
+.dictionary-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.dictionary-box .word-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.dictionary-box .word-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.dictionary-box .word-type {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--accent);
+  background: rgba(79, 143, 176, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.dictionary-box .word-definitions {
+  list-style: disc inside;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: 0;
+  padding-left: 2px;
+}
+
+.dictionary-box .word-definitions li {
+  margin-bottom: 4px;
+}
