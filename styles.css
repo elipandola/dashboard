@@ -152,22 +152,52 @@ header p{
 }
 
 /* --- estilos del widget 05: reloj digital --- */
-#widget-05 .clock-display,
-#widget-5 .clock-display{
-  flex:1;
-  width:100%;
+.clock-container{
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding: clamp(12px, 2vw, 24px) 0 0;
+  width:100%;
+  height:100%;
+  padding: clamp(8px, 1.5vw, 16px) 0 0;
+}
+
+.clock-display{
   color:var(--ink);
-  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: clamp(1.8rem, 4vw, 3.4rem);
-  font-weight:600;
+  font-weight:700;
   letter-spacing:0.04em;
   line-height:1;
   white-space:nowrap;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
 }
+
+.clock-controls{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  justify-content:center;
+}
+
+.clock-toggle{
+  appearance:none;
+  border:1px solid var(--card-border);
+  background:transparent;
+  color:var(--ink);
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:0.85rem;
+  cursor:pointer;
+}
+
+/* namespace específico para widgets con id alternativo */
+#widget-05 .clock-container,
+#widget-5 .clock-container{ display:block; }
 
 @media (max-width: 900px){
   .panel{
