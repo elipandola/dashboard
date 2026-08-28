@@ -151,24 +151,6 @@ header p{
   transform: translateY(0);
 }
 
-/* --- estilos del widget 05: reloj digital --- */
-#widget-05 .clock-display,
-#widget-5 .clock-display{
-  flex:1;
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: clamp(12px, 2vw, 24px) 0 0;
-  color:var(--ink);
-  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: clamp(1.8rem, 4vw, 3.4rem);
-  font-weight:600;
-  letter-spacing:0.04em;
-  line-height:1;
-  white-space:nowrap;
-}
-
 @media (max-width: 900px){
   .panel{
     grid-template-columns: repeat(2, 1fr);
@@ -181,8 +163,4 @@ header p{
     aspect-ratio: auto;
   }
   .widget{ min-height:140px; }
-  #widget-05 .clock-display,
-  #widget-5 .clock-display{
-    font-size: clamp(1.5rem, 10vw, 2.4rem);
-  }
 }
