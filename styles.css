@@ -152,50 +152,28 @@ header p{
 }
 
 /* --- estilos del widget 05: reloj digital --- */
+/* Estilos esenciales para el widget de reloj (Iteración 1 - MVP) */
 .clock-container{
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
   width:100%;
   height:100%;
-  padding: clamp(8px, 1.5vw, 16px) 0 0;
+  padding: clamp(8px, 1.5vw, 12px) 0;
 }
 
 .clock-display{
   color:var(--ink);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: clamp(1.8rem, 4vw, 3.4rem);
-  font-weight:700;
-  letter-spacing:0.04em;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight:600;
+  letter-spacing:0.03em;
   line-height:1;
   white-space:nowrap;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-width:0;
+  text-align:center;
 }
 
-.clock-controls{
-  margin-top:8px;
-  display:flex;
-  gap:8px;
-  align-items:center;
-  justify-content:center;
-}
-
-.clock-toggle{
-  appearance:none;
-  border:1px solid var(--card-border);
-  background:transparent;
-  color:var(--ink);
-  padding:6px 10px;
-  border-radius:10px;
-  font-size:0.85rem;
-  cursor:pointer;
-}
-
-/* namespace específico para widgets con id alternativo */
+/* Compatibilidad mínima con selectores de tarjeta existentes */
 #widget-05 .clock-container,
 #widget-5 .clock-container{ display:block; }
 
