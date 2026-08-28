@@ -9,6 +9,7 @@ function mountDictionaryWidget(containerId) {
     return;
   }
 
+
   container.innerHTML = `
     <span class="tag">Diccionario inglés</span>
     <div class="dictionary-box">
