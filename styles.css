@@ -164,3 +164,26 @@ header p{
   }
   .widget{ min-height:140px; }
 }
+/* Estilos del conversor de unidades */
+
+.conversion-static {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.conversion-static span:nth-child(2) {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.conversion-static span:last-child {
+  font-weight: 500;
+}
