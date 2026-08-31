@@ -8,7 +8,7 @@
  *   <script> mountNewsWidget('widget-1'); </script>
  */
 
-function mountCounterWidget(containerId) {
+function mountNewsWidget(containerId) {
   const container = document.getElementById(containerId);
 
   if (!container) {
