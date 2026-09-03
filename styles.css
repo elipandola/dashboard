@@ -164,3 +164,101 @@ header p{
   }
   .widget{ min-height:140px; }
 }
+
+
+/* --- Estilos Widget 4: Diccionario --- */
+.dict-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.dict-search-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dict-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(79, 143, 176, 0.35);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transform: translateY(-50px);
+}
+
+.dict-input:focus {
+  border-color: #4882a6;
+  box-shadow: 0 0 0 3px rgba(72, 130, 166, 0.18);
+  background: #ffffff;
+}
+
+/* Botón redondeado con el estilo exacto de la referencia */
+.dict-btn {
+  padding: 8px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: #4882a6;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(72, 130, 166, 0.28);
+  transition: background 0.2s ease, transform 0.15s ease;
+   transform: translateY(-50px);
+}
+
+.dict-btn:hover {
+  background: #3a6f8f;
+  transform: translateY(-1px);
+}
+
+.dict-btn:active {
+  transform: translateY(0);
+}
+
+.dict-result {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+   transform: translateY(-20px);
+}
+
+.dict-result .word-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.dict-result .word-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.dict-result .word-type {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #4882a6;
+  background: rgba(72, 130, 166, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.dict-result .word-definition {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin: 0;
+}
