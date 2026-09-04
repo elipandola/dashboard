@@ -116,6 +116,7 @@ header p{
   position:relative;
   align-items:center;
   justify-content:center;
+  border-color:#4882a6;
 }
 
 #widget-05 .tag{
@@ -132,8 +133,15 @@ header p{
 }
 
 #widget-05 h1{
-  color:#4882a6;
-  font-size:clamp(2.5rem, 5vw, 4rem);
+  color:#0369a1;
+  font-family:'Courier New', monospace;
+  font-size:clamp(2rem, 4vw, 3.25rem);
+  font-weight:700;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0.02em;
+  text-align:center;
+  max-width:100%;
   border-bottom:3px solid #dc2626;
 }
 
