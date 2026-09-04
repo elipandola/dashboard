@@ -262,3 +262,110 @@ header p{
   color: var(--ink-soft);
   margin: 0;
 }
+
+/* --- Calculator widget styles --- */
+.calc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.calc-input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(79, 143, 176, 0.35);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: rgba(255,255,255,0.75);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calc-input:focus {
+  border-color: #4882a6;
+  box-shadow: 0 0 0 3px rgba(72,130,166,.18);
+  background: #fff;
+}
+
+.calc-ops-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.calc-btn {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  background-color: #4f92b8;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-btn:hover {
+  background: #3a6f8f;
+  transform: translateY(-1px);
+}
+
+.calc-btn:active {
+  transform: translateY(0);
+}
+
+.calc-btn.selected {
+  background: #386e8e;
+  box-shadow: 0 0 0 2px #264e66;
+}
+
+.calc-btn-equals {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  background: #fff;
+  color: #4f92b8;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-btn-equals:hover {
+  background: #eaf4f9;
+  color: #3a6f8f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(72,130,166,.28);
+}
+
+.calc-btn-equals:active {
+  transform: translateY(0);
+}
+
+.calc-result-container {
+  margin-top: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc-result {
+  color: var(--accent);
+  font-weight: 700;
+}
