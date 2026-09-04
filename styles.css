@@ -166,6 +166,71 @@ header p{
 }
 
 
+.todo-form{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+}
+
+.todo-input{
+  flex:1;
+  min-width:0;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid var(--card-border);
+  background:rgba(255,255,255,0.6);
+  font-family:'Inter', sans-serif;
+  font-size:0.85rem;
+  color:var(--ink);
+}
+
+.todo-input:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+
+.todo-add-btn{
+  padding:8px 14px;
+  border-radius:10px;
+  border:none;
+  background:var(--accent);
+  color:#fff;
+  font-size:0.8rem;
+  font-weight:500;
+  cursor:pointer;
+  transition: background .2s ease, transform .15s ease;
+}
+
+.todo-add-btn:hover{
+  transform: translateY(-1px);
+  background:#437c9b;
+}
+
+.todo-error{
+  font-size:0.72rem;
+  color:#c0524a;
+  min-height:1em;
+  margin-top:4px;
+}
+
+.todo-list{
+  list-style:none;
+  margin-top:8px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  overflow-y:auto;
+}
+
+.todo-item{
+  background:rgba(255,255,255,0.6);
+  border:1px solid var(--card-border);
+  border-radius:8px;
+  padding:6px 10px;
+  font-size:0.82rem;
+  color:var(--ink);
+}
+
 /* --- Estilos Widget 4: Diccionario --- */
 .dict-container {
   display: flex;
