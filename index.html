@@ -58,12 +58,24 @@
     // El widget de contador se monta sobre el widget-1
     mountCounterWidget('widget-1');
   </script> -->
-   <!-- Ejemplo: cargar un widget desde otro archivo JS e insertarlo -->
+  <script src="noticias-widget-v1.js"></script>
+  <script>
+    mountNewsWidget('widget-1');
+  </script>
+
+  <script src="todo-widget.js"></script>
+  <script>
+    mountTodoWidget('widget-2');
+  </script>
+
   <script src="calculator-widget.js"></script>
   <script>
     mountCalculatorWidget('widget-3');
   </script>
 
-
+  <script src="dictionary-widget.js"></script>
+  <script>
+    mountDictionaryWidget('widget-4');
+  </script>
 </body>
 </html>
