@@ -112,6 +112,31 @@ header p{
   color:var(--ink-soft);
 }
 
+#widget-05{
+  position:relative;
+  align-items:center;
+  justify-content:center;
+}
+
+#widget-05 .tag{
+  position:absolute;
+  top:clamp(16px, 1.6vw, 22px);
+}
+
+#widget-05 .clock-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+}
+
+#widget-05 h1{
+  color:#4882a6;
+  font-size:clamp(2.5rem, 5vw, 4rem);
+  border-bottom:3px solid #dc2626;
+}
+
 /* --- estilos del widget de ejemplo: contador --- */
 .counter{
   display:flex;
