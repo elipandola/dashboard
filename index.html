@@ -34,7 +34,7 @@
       <span class="tag">Widget 04</span>
       <span class="placeholder">Contenido pendiente</span>
     </div>
-    <div class="widget" id="widget-5">
+    <div class="widget" id="widget-05">
       <span class="tag">Widget 05</span>
       <span class="placeholder">Contenido pendiente</span>
     </div>
@@ -67,11 +67,22 @@
   <script>
     mountDictionaryWidget('widget-4');
   </script>
-</body>
+
+  <script src="pomodoro-widget.js"></script>
+<script>
+  mountPomodoroWidget('widget-8');
+</script>
+
+
 
   <script src="todo-widget.js"></script>
   <script>
     mountTodoWidget('widget-2');
   </script> 
+
+  <script src="clock-widget.js"></script>
+  <script>mountClockWidget('widget-05');</script>
     
+  
+</body>    
 </html>

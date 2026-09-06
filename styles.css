@@ -112,6 +112,39 @@ header p{
   color:var(--ink-soft);
 }
 
+#widget-05{
+  position:relative;
+  align-items:center;
+  justify-content:center;
+  border-color:#4882a6;
+}
+
+#widget-05 .tag{
+  position:absolute;
+  top:clamp(16px, 1.6vw, 22px);
+}
+
+#widget-05 .clock-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+}
+
+#widget-05 h1{
+  color:#0369a1;
+  font-family:'Courier New', monospace;
+  font-size:clamp(2rem, 4vw, 3.25rem);
+  font-weight:700;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0.02em;
+  text-align:center;
+  max-width:100%;
+  border-bottom:3px solid #dc2626;
+}
+
 /* --- estilos del widget de ejemplo: contador --- */
 .counter{
   display:flex;
@@ -346,4 +379,99 @@ header p{
   line-height: 1.4;
   color: var(--ink-soft);
   margin: 0;
+}
+
+/* --- Widget 8: Pomodoro --- */
+
+.pomodoro{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  flex:1;
+}
+
+.pomodoro-circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,0.45);
+  border:6px solid rgba(79,145,184,0.18);
+
+  box-shadow:
+    0 8px 22px rgba(45,78,99,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.7);
+}
+
+.pomodoro-time{
+  font-family:'Outfit', sans-serif;
+  font-size:2.7rem;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:1px;
+}
+
+.pomodoro-actions{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.pomodoro-btn{
+  border:none;
+  border-radius:12px;
+
+  background:#4f91b8;
+  color:white;
+
+  font-family:'Inter', sans-serif;
+  font-size:0.9rem;
+  font-weight:500;
+
+  padding:11px 24px;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  cursor:pointer;
+
+  box-shadow:0 5px 14px rgba(49,98,127,0.18);
+
+  transition:
+    background .2s ease,
+    transform .15s ease,
+    box-shadow .2s ease;
+}
+
+.pomodoro-btn:hover{
+  background:#427fa3;
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(49,98,127,0.23);
+}
+
+.pomodoro-btn:active{
+  transform:translateY(0);
+}
+
+.pomodoro-btn:disabled{
+  opacity:0.55;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}
+
+.pomodoro-btn:disabled:hover{
+  background:#4f91b8;
+  transform:none;
+}
+
+.pomodoro-play{
+  font-size:0.75rem;
 }
