@@ -19,10 +19,20 @@ function mountPomodoroWidget(containerId) {
       </div>
 
       <div class="pomodoro-actions">
+
         <button class="pomodoro-btn" data-action="start">
           <span class="pomodoro-play">▶</span>
           Iniciar
         </button>
+
+        <button
+          class="pomodoro-btn pomodoro-btn-secondary"
+          data-action="reset"
+          disabled
+        >
+          Reiniciar
+        </button>
+
       </div>
 
     </div>
@@ -30,6 +40,7 @@ function mountPomodoroWidget(containerId) {
 
   const timeEl = container.querySelector('.pomodoro-time');
   const startBtn = container.querySelector('[data-action="start"]');
+  const resetBtn = container.querySelector('[data-action="reset"]');
 
   function renderTime() {
     const minutes = Math.floor(totalSeconds / 60);
@@ -48,7 +59,11 @@ function mountPomodoroWidget(containerId) {
 
     startBtn.disabled = true;
 
+    // Reiniciar se habilita solamente después de iniciar
+    resetBtn.disabled = false;
+
     timerId = setInterval(() => {
+
       if (totalSeconds > 0) {
         totalSeconds--;
         renderTime();
@@ -58,10 +73,29 @@ function mountPomodoroWidget(containerId) {
         clearInterval(timerId);
         timerId = null;
       }
+
     }, 1000);
   }
 
+  function resetTimer() {
+
+    // Detiene el contador actual
+    if (timerId !== null) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+
+    // Regresa a 25 minutos
+    totalSeconds = 25 * 60;
+
+    renderTime();
+
+    // Vuelve a iniciar automáticamente
+    startTimer();
+  }
+
   startBtn.addEventListener('click', startTimer);
+  resetBtn.addEventListener('click', resetTimer);
 
   renderTime();
 }
