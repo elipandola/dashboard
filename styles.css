@@ -517,6 +517,7 @@ header p{
 .calc-result {
   color: var(--accent);
   font-weight: 700;
+}
 /* --- Widget 8: Pomodoro --- */
 
 .pomodoro{
@@ -610,5 +611,4 @@ header p{
 
 .pomodoro-play{
   font-size:0.75rem;
-}
 }
