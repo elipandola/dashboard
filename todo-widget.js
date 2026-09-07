@@ -37,7 +37,7 @@ function mountTodoWidget(containerId) {
   const input = container.querySelector('.todo-input');
   const lista = container.querySelector('.todo-list');
   const errorMsg = container.querySelector('.todo-error');
-
+  
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     agregarTarea();
@@ -60,7 +60,20 @@ function mountTodoWidget(containerId) {
 
     const item = document.createElement('li');
     item.classList.add('todo-item');
-    item.textContent = texto;
+
+    const textoTarea = document.createElement('span');
+    textoTarea.textContent = texto;
+
+    const botonEliminar = document.createElement('button');
+    botonEliminar.textContent = 'Eliminar';
+    botonEliminar.type = 'button';
+
+    botonEliminar.addEventListener('click', () => {
+      item.remove();
+    });
+
+    item.appendChild(textoTarea);
+    item.appendChild(botonEliminar);
 
     lista.appendChild(item);
 
