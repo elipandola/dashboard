@@ -25,12 +25,14 @@ function mountCalculatorWidget(containerId) {
       <div class="calc-result-container">
         Resultado: <span class="calc-result">0</span>
       </div>
+      <div class="calc-history">Historial: <span class="calc-history-value">-</span></div>
     </div>
   `;
 
   const num1Input = container.querySelector('.num1');
   const num2Input = container.querySelector('.num2');
   const resultEl = container.querySelector('.calc-result');
+  const historyEl = container.querySelector('.calc-history-value');
 
   let selectedOperation = null;
 
@@ -49,23 +51,37 @@ function mountCalculatorWidget(containerId) {
     const val1 = parseFloat(num1Input.value) || 0;
     const val2 = parseFloat(num2Input.value) || 0;
     let result;
+    let operator;
     switch (selectedOperation) {
       case 'sum':
         result = val1 + val2;
+        operator = '+';
         break;
       case 'sub':
         result = val1 - val2;
+        operator = '-';
         break;
       case 'mul':
         result = val1 * val2;
+        operator = '×';
         break;
       case 'div':
         result = val2 !== 0 ? val1 / val2 : '∞';
+        operator = '÷';
         break;
       default:
         result = 'Select operation';
     }
-    resultEl.textContent = result;
+
+    const formatNumber = value => typeof value === 'number'
+      ? Number(value.toFixed(2))
+      : value;
+    const formattedResult = formatNumber(result);
+
+    resultEl.textContent = formattedResult;
+    if (operator) {
+      historyEl.textContent = `${formatNumber(val1)}${operator}${formatNumber(val2)} = ${formattedResult}`;
+    }
   });
 
   // Reset selection on input change
