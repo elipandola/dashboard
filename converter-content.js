@@ -6,7 +6,7 @@ function getConverterContent() {
 
     <!-- Nombre del conversor -->
     <span class="tag">
-      BRN_CONVERSOR
+      CONVERSOR
     </span>
 
     <!-- Contenedor principal del conversor -->

@@ -3,43 +3,51 @@
 
 <head>
 
-  <!-- Permite utilizar caracteres especiales
-       del idioma español -->
+  <!-- Permite utilizar caracteres especiales -->
   <meta charset="UTF-8">
 
-  <!-- Hace que la página se adapte
-       a diferentes tamaños de pantalla -->
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <!-- Hace que la página sea adaptable -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <!-- Título de la página -->
-  <title>BRN_CONVERSOR</title>
+  <!-- Nombre de la página -->
+  <title>Panel</title>
 
   <!-- Conexión con Google Fonts -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-  <!-- Tipografías utilizadas por el proyecto -->
+  <!-- Tipografías del proyecto -->
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  >
 
-  <!-- Conectamos nuestro archivo CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Archivo de estilos -->
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
 
 </head>
 
+
 <body>
 
-  <!-- Nubes decorativas del diseño -->
+  <!-- Nubes decorativas -->
   <div class="cloud c1"></div>
   <div class="cloud c2"></div>
+
 
   <!-- Encabezado -->
   <header>
 
     <!-- Nombre del proyecto -->
-    <h1>BRN_CONVERSOR</h1>
+    <h1>Panel</h1>
 
   </header>
 
@@ -49,9 +57,14 @@
 
 
     <!-- Widget 1 -->
-    <div class="widget" id="widget-1">
+    <div
+      class="widget"
+      id="widget-1"
+    >
 
-      <span class="tag">Widget 01</span>
+      <span class="tag">
+        Widget 01
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -60,23 +73,32 @@
     </div>
 
 
-    <!-- Widget 2: aquí estará nuestro conversor -->
-    <div class="widget" id="widget-2">
-
-      <!-- Este contenido será reemplazado
-           automáticamente por JavaScript -->
+    <!-- Widget 2 -->
+    <div
+      class="widget"
+      id="widget-2"
+    >
 
       <span class="tag">
-        BRN_CONVERSOR
+        Widget 02
+      </span>
+      
+      <span class="placeholder">
+        Contenido pendiente
       </span>
 
     </div>
 
 
     <!-- Widget 3 -->
-    <div class="widget" id="widget-3">
+    <div
+      class="widget"
+      id="widget-3"
+    >
 
-      <span class="tag">Widget 03</span>
+      <span class="tag">
+        Widget 03
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -86,9 +108,14 @@
 
 
     <!-- Widget 4 -->
-    <div class="widget" id="widget-4">
+    <div
+      class="widget"
+      id="widget-4"
+    >
 
-      <span class="tag">Widget 04</span>
+      <span class="tag">
+        Widget 04
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -98,9 +125,14 @@
 
 
     <!-- Widget 5 -->
-    <div class="widget" id="widget-5">
+    <div
+      class="widget"
+      id="widget-5"
+    >
 
-      <span class="tag">Widget 05</span>
+      <span class="tag">
+        Widget 05
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -110,9 +142,14 @@
 
 
     <!-- Widget 6 -->
-    <div class="widget" id="widget-6">
+    <div
+      class="widget"
+      id="widget-6"
+    >
 
-      <span class="tag">Widget 06</span>
+      <span class="tag">
+        CONVERSOR
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -122,9 +159,14 @@
 
 
     <!-- Widget 7 -->
-    <div class="widget" id="widget-7">
+    <div
+      class="widget"
+      id="widget-7"
+    >
 
-      <span class="tag">Widget 07</span>
+      <span class="tag">
+        Widget 07
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -134,9 +176,14 @@
 
 
     <!-- Widget 8 -->
-    <div class="widget" id="widget-8">
+    <div
+      class="widget"
+      id="widget-8"
+    >
 
-      <span class="tag">Widget 08</span>
+      <span class="tag">
+        Widget 08
+      </span>
 
       <span class="placeholder">
         Contenido pendiente
@@ -144,27 +191,27 @@
 
     </div>
 
+
   </main>
 
 
-  <!-- Cargamos primero el archivo que contiene
-       el contenido del conversor -->
+  <!-- Primero cargamos el contenido -->
   <script src="converter-content.js"></script>
 
 
-  <!-- Después cargamos el archivo que contiene
-       el funcionamiento del conversor -->
+  <!-- Después cargamos la lógica -->
   <script src="converter-widget.js"></script>
 
 
-  <!-- Ejecutamos el conversor dentro de widget-2 -->
+  <!-- Ejecutamos el conversor -->
   <script>
 
-    // Montamos el conversor en el widget 2.
+    // Colocamos el conversor
     mountConverterWidget('widget-6');
 
   </script>
 
 
 </body>
+
 </html>

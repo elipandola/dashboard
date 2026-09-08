@@ -1,64 +1,69 @@
+/* =====================================================
+   BRN_CONVERSOR
+   ESTILOS GENERALES
+   ===================================================== */
+
 :root {
 
-  /* Colores del fondo */
   --sky-top: #cfe8f7;
+
   --sky-mid: #e7f3fb;
+
   --sky-bottom: #f7fbfd;
 
-  /* Color principal del texto */
   --ink: #1f3b4d;
 
-  /* Color secundario del texto */
   --ink-soft: #5c7a8a;
 
-  /* Fondo de las tarjetas */
   --card-bg: rgba(255,255,255,0.55);
 
-  /* Borde de las tarjetas */
   --card-border: rgba(255,255,255,0.85);
 
-  /* Azul principal */
   --accent: #4f8fb0;
 
-  /* Sombra */
-  --shadow: 0 20px 40px -20px rgba(31,59,77,0.25);
+  --shadow:
+    0 20px 40px -20px
+    rgba(31,59,77,0.25);
 
-  /* Radio de las esquinas */
   --radius: 20px;
 
-  /* Separación entre widgets */
   --gap: clamp(14px, 2vw, 24px);
 }
 
 
-/* Configuración general */
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
 * {
+
   box-sizing: border-box;
+
   margin: 0;
+
   padding: 0;
 }
 
 
-/* Altura completa */
 html,
 body {
+
   height: 100%;
 }
 
 
-/* Cuerpo de la página */
+/* =====================================================
+   CUERPO DE LA PÁGINA
+   ===================================================== */
+
 body {
 
-  /* Tipografía principal */
   font-family: 'Inter', sans-serif;
 
-  /* Color del texto */
   color: var(--ink);
 
-  /* Altura mínima */
   min-height: 100vh;
 
-  /* Fondo degradado */
   background:
 
     radial-gradient(
@@ -80,23 +85,25 @@ body {
       var(--sky-bottom) 100%
     );
 
-  /* Organización del contenido */
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
-  /* Espaciado */
-  padding: clamp(24px, 4vw, 56px);
+  padding:
+    clamp(24px, 4vw, 56px);
 
-  /* Evita desplazamiento horizontal */
   overflow-x: hidden;
 
-  /* Permite colocar elementos decorativos */
   position: relative;
 }
 
 
-/* Nubes decorativas */
+/* =====================================================
+   NUBES
+   ===================================================== */
+
 .cloud {
 
   position: fixed;
@@ -105,7 +112,8 @@ body {
 
   filter: blur(40px);
 
-  background: rgba(255,255,255,0.5);
+  background:
+    rgba(255,255,255,0.5);
 
   pointer-events: none;
 
@@ -113,70 +121,85 @@ body {
 }
 
 
-/* Primera nube */
 .cloud.c1 {
+
   width: 280px;
+
   height: 120px;
+
   top: -40px;
+
   left: -60px;
 }
 
 
-/* Segunda nube */
 .cloud.c2 {
 
   width: 340px;
+
   height: 140px;
 
   bottom: -60px;
+
   right: -80px;
 
-  background: rgba(255,255,255,0.35);
+  background:
+    rgba(255,255,255,0.35);
 }
 
 
-/* Encabezado */
+/* =====================================================
+   ENCABEZADO
+   ===================================================== */
+
 header {
 
   width: 100%;
 
   max-width: 1240px;
 
-  margin-bottom: clamp(24px, 4vw, 40px);
+  margin-bottom:
+    clamp(24px, 4vw, 40px);
 
   z-index: 1;
 }
 
 
-/* Título */
 header h1 {
 
-  font-family: 'Outfit', sans-serif;
+  font-family:
+    'Outfit', sans-serif;
 
   font-weight: 500;
 
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-size:
+    clamp(1.6rem, 2.4vw, 2.2rem);
 
-  letter-spacing: -0.01em;
+  letter-spacing:
+    -0.01em;
 
-  color: var(--ink);
+  color:
+    var(--ink);
 }
 
 
-/* Texto secundario */
 header p {
 
   margin-top: 6px;
 
   font-size: 0.95rem;
 
-  color: var(--ink-soft);
+  color:
+    var(--ink-soft);
 
   font-weight: 400;
 }
 
 
-/* Panel de widgets */
+/* =====================================================
+   PANEL PRINCIPAL
+   ===================================================== */
+
 .panel {
 
   width: 100%;
@@ -185,32 +208,44 @@ header p {
 
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 
   grid-auto-rows: 1fr;
 
-  gap: var(--gap);
+  gap:
+    var(--gap);
 
-  aspect-ratio: 4 / 2;
+  aspect-ratio:
+    4 / 2;
 
   z-index: 1;
 }
 
 
-/* Tarjetas */
+/* =====================================================
+   WIDGETS
+   ===================================================== */
+
 .widget {
 
-  background: var(--card-bg);
+  background:
+    var(--card-bg);
 
-  border: 1px solid var(--card-border);
+  border:
+    1px solid var(--card-border);
 
-  border-radius: var(--radius);
+  border-radius:
+    var(--radius);
 
-  box-shadow: var(--shadow);
+  box-shadow:
+    var(--shadow);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter:
+    blur(14px);
 
-  -webkit-backdrop-filter: blur(14px);
+  -webkit-backdrop-filter:
+    blur(14px);
 
   display: flex;
 
@@ -218,20 +253,27 @@ header p {
 
   justify-content: space-between;
 
-  padding: clamp(16px, 1.6vw, 22px);
+  padding:
+    clamp(16px, 1.6vw, 22px);
 
   min-height: 0;
 
   transition:
     transform .25s ease,
     box-shadow .25s ease;
+
+  /* Evita que el contenido
+     salga del widget */
+  overflow: hidden;
 }
 
 
 /* Efecto al pasar el mouse */
+
 .widget:hover {
 
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
   box-shadow:
     0 26px 46px -20px
@@ -239,31 +281,46 @@ header p {
 }
 
 
-/* Etiquetas de los widgets */
+/* =====================================================
+   ETIQUETA DEL WIDGET
+   ===================================================== */
+
 .widget .tag {
 
-  font-family: 'Outfit', sans-serif;
+  font-family:
+    'Outfit', sans-serif;
 
-  font-size: 0.7rem;
+  font-size:
+    0.7rem;
 
-  letter-spacing: 0.08em;
+  letter-spacing:
+    0.08em;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
-  color: var(--accent);
+  color:
+    var(--accent);
 
-  font-weight: 500;
+  font-weight:
+    500;
 }
 
 
-/* Texto de contenido pendiente */
+/* =====================================================
+   CONTENIDO PENDIENTE
+   ===================================================== */
+
 .widget .placeholder {
 
-  align-self: flex-start;
+  align-self:
+    flex-start;
 
-  font-size: 0.8rem;
+  font-size:
+    0.8rem;
 
-  color: var(--ink-soft);
+  color:
+    var(--ink-soft);
 }
 
 
@@ -271,8 +328,6 @@ header p {
    BRN_CONVERSOR
    ===================================================== */
 
-
-/* Contenedor del conversor */
 .conversion-static {
 
   display: flex;
@@ -283,146 +338,317 @@ header p {
 
   justify-content: center;
 
-  gap: 16px;
+  /* Espacio reducido */
+  gap: 9px;
 
   flex: 1;
 
-  font-family: 'Outfit', sans-serif;
+  /* Mantiene el contenido
+     dentro del widget */
+  min-height: 0;
 
-  font-size: 1rem;
+  width: 100%;
 
-  color: var(--ink);
-}
+  font-family:
+    'Outfit', sans-serif;
 
-
-/* Texto "1 metro" */
-.conversion-value {
-
-  font-size: 1.35rem;
-
-  font-weight: 500;
-
-  color: var(--ink);
-}
-
-
-/* Botón Convertir */
-#convert-button {
-
-  border: none;
-
-  border-radius: 14px;
-
-  padding: 13px 28px;
-
-  font-size: 1rem;
-
-  font-weight: 500;
-
-  font-family: 'Outfit', sans-serif;
-
-  background: #5298bd;
-
-  color: white;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 18px
-    rgba(82,152,189,0.25);
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-
-
-/* Cuando pasamos el mouse */
-#convert-button:hover {
-
-  transform: translateY(-2px);
-
-  opacity: 0.9;
-}
-
-
-/* Cuando presionamos el botón */
-#convert-button:active {
-
-  transform: translateY(0);
-}
-
-
-/* Resultado */
-#conversion-result {
-
-  min-height: 24px;
-
-  font-size: 1rem;
-
-  font-weight: 500;
-
-  color: var(--ink);
-
-  text-align: center;
+  color:
+    var(--ink);
 }
 
 
 /* =====================================================
-   WIDGET DE CONTADOR
+   TÍTULO DEL CONVERSOR
    ===================================================== */
 
+.conversion-title {
 
-/* Contenedor del contador */
-.counter {
+  font-size:
+    1.15rem;
+
+  font-weight:
+    500;
+
+  color:
+    var(--ink);
+
+  text-align:
+    center;
+
+  line-height:
+    1.2;
+}
+
+
+/* =====================================================
+   CAMPO PARA INGRESAR EL NÚMERO
+   ===================================================== */
+
+#conversion-input {
+
+  width: 70%;
+
+  max-width: 160px;
+
+  padding:
+    8px 12px;
+
+  border:
+    1px solid
+    rgba(79,143,176,0.35);
+
+  border-radius:
+    11px;
+
+  background:
+    rgba(255,255,255,0.75);
+
+  color:
+    var(--ink);
+
+  font-family:
+    'Outfit', sans-serif;
+
+  font-size:
+    0.95rem;
+
+  text-align:
+    center;
+
+  outline:
+    none;
+}
+
+
+/* Cuando seleccionamos
+   el campo */
+
+#conversion-input:focus {
+
+  border-color:
+    var(--accent);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(79,143,176,0.12);
+}
+
+
+/* =====================================================
+   CONTENEDOR DE LOS BOTONES
+   ===================================================== */
+
+.conversion-buttons {
+
+  width: 100%;
 
   display: flex;
 
+  flex-direction: column;
+
   align-items: center;
 
-  justify-content: center;
+  /* Poco espacio entre botones */
+  gap: 5px;
 
-  gap: 18px;
+  flex-shrink: 1;
+
+  min-height: 0;
 }
 
 
-/* Valor del contador */
+/* =====================================================
+   BOTONES DE CONVERSIÓN
+   ===================================================== */
+
+.conversion-btn {
+
+  /* Botones más pequeños */
+  width: 82%;
+
+  /* Menos altura */
+  padding:
+    6px 10px;
+
+  border:
+    none;
+
+  border-radius:
+    10px;
+
+  background:
+    #5298bd;
+
+  color:
+    white;
+
+  font-family:
+    'Outfit', sans-serif;
+
+  /* Texto pequeño */
+  font-size:
+    0.72rem;
+
+  font-weight:
+    500;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 5px 12px
+    rgba(82,152,189,0.20);
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+
+  /* Evita que el botón
+     se deforme */
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   EFECTO DEL BOTÓN
+   ===================================================== */
+
+.conversion-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  opacity:
+    0.9;
+}
+
+
+/* =====================================================
+   BOTÓN PRESIONADO
+   ===================================================== */
+
+.conversion-btn:active {
+
+  transform:
+    translateY(0);
+}
+
+
+/* =====================================================
+   RESULTADO
+   ===================================================== */
+
+#conversion-result {
+
+  /* Espacio reservado */
+  min-height:
+    34px;
+
+  /* Resultado más grande */
+  font-family:
+    'Outfit', sans-serif;
+
+  font-size:
+    1.15rem;
+
+  /* Resultado destacado */
+  font-weight:
+    600;
+
+  color:
+    var(--ink);
+
+  text-align:
+    center;
+
+  /* Mantiene el resultado
+     dentro del widget */
+  max-width:
+    95%;
+
+  overflow-wrap:
+    break-word;
+
+  /* Separación */
+  margin-top:
+    4px;
+
+  line-height:
+    1.25;
+}
+
+
+/* =====================================================
+   CONTADOR ANTERIOR
+   ===================================================== */
+
+.counter {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    18px;
+}
+
+
 .counter-value {
 
-  font-family: 'Outfit', sans-serif;
+  font-family:
+    'Outfit', sans-serif;
 
-  font-size: 1.8rem;
+  font-size:
+    1.8rem;
 
-  font-weight: 500;
+  font-weight:
+    500;
 
-  color: var(--ink);
+  color:
+    var(--ink);
 
-  min-width: 2ch;
+  min-width:
+    2ch;
 
-  text-align: center;
+  text-align:
+    center;
 }
 
 
-/* Botón del contador */
 .counter-btn {
 
-  width: 34px;
+  width:
+    34px;
 
-  height: 34px;
+  height:
+    34px;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
-  border: 1px solid var(--card-border);
+  border:
+    1px solid
+    var(--card-border);
 
-  background: rgba(255,255,255,0.6);
+  background:
+    rgba(255,255,255,0.6);
 
-  color: var(--accent);
+  color:
+    var(--accent);
 
-  font-size: 1.1rem;
+  font-size:
+    1.1rem;
 
-  line-height: 1;
+  line-height:
+    1;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   transition:
     background .2s ease,
@@ -430,23 +656,27 @@ header p {
 }
 
 
-/* Mouse sobre botón */
 .counter-btn:hover {
 
-  background: rgba(255,255,255,0.9);
+  background:
+    rgba(255,255,255,0.9);
 
-  transform: translateY(-1px);
+  transform:
+    translateY(-1px);
 }
 
 
-/* Al presionar */
 .counter-btn:active {
 
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
 
 
-/* Adaptación para pantallas medianas */
+/* =====================================================
+   RESPONSIVE - TABLETS
+   ===================================================== */
+
 @media (max-width: 900px) {
 
   .panel {
@@ -454,23 +684,55 @@ header p {
     grid-template-columns:
       repeat(2, 1fr);
 
-    aspect-ratio: 2 / 4;
+    aspect-ratio:
+      2 / 4;
   }
 }
 
 
-/* Adaptación para celulares */
+/* =====================================================
+   RESPONSIVE - CELULARES
+   ===================================================== */
+
 @media (max-width: 520px) {
 
   .panel {
 
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
-    aspect-ratio: auto;
+    aspect-ratio:
+      auto;
   }
+
 
   .widget {
 
-    min-height: 140px;
+    min-height:
+      140px;
+  }
+
+
+  /* En pantallas pequeñas
+     reducimos un poco más
+     los botones */
+
+  .conversion-btn {
+
+    width:
+      85%;
+
+    font-size:
+      0.7rem;
+
+    padding:
+      6px 8px;
+  }
+
+
+  #conversion-result {
+
+    font-size:
+      1rem;
   }
 }
