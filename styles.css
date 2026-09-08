@@ -70,7 +70,7 @@ header p{
   width:100%;
   max-width:1240px;
   display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: var(--gap);
   aspect-ratio: 4 / 2;
@@ -88,6 +88,7 @@ header p{
   flex-direction:column;
   justify-content:space-between;
   padding: clamp(16px, 1.6vw, 22px);
+  min-width:0;
   min-height:0;
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -126,14 +127,22 @@ header p{
 
 #widget-05 .clock-content{
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:clamp(8px, 1vw, 12px);
   width:100%;
+  min-width:0;
   height:100%;
 }
 
 #widget-05 h1{
-  color:#0369a1;
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  flex-wrap:nowrap;
+  white-space:nowrap;
+  color:#4f92b8;
   font-family:'Courier New', monospace;
   font-size:clamp(2rem, 4vw, 3.25rem);
   font-weight:700;
@@ -142,7 +151,38 @@ header p{
   letter-spacing:0.02em;
   text-align:center;
   max-width:100%;
-  border-bottom:3px solid #dc2626;
+  min-width:0;
+  border-bottom:3px solid #4f92b8;
+}
+
+#widget-05 .clock-meridiem{
+  margin-left:0.35em;
+  color:#4f92b8;
+  font-family:'Outfit', sans-serif;
+  font-size:0.32em;
+  font-weight:600;
+  letter-spacing:0;
+}
+
+#widget-05 .clock-toggle{
+  border:1px solid #0369a1;
+  border-radius:9999px;
+  padding:7px 16px;
+  background:#0369a1;
+  color:#cfe8f7;
+  font:500 0.75rem 'Outfit', sans-serif;
+  cursor:pointer;
+  transition:background .2s ease, transform .15s ease;
+}
+
+#widget-05 .clock-toggle:hover{
+  background:#075985;
+  transform:translateY(-1px);
+}
+
+#widget-05 .clock-toggle:focus-visible{
+  outline:2px solid #4f92b8;
+  outline-offset:2px;
 }
 
 /* --- estilos del widget de ejemplo: contador --- */
