@@ -1,26 +1,64 @@
+
 function getConverterContent() {
 
 
   return `
 
     <!-- Nombre del conversor -->
-    <span class="tag">BRN_CONVERSOR</span>
+    <span class="tag">
+      BRN_CONVERSOR
+    </span>
 
-    <!-- Contenedor de los elementos del conversor -->
+    <!-- Contenedor principal del conversor -->
     <div class="conversion-static">
 
-      <!-- Valor que vamos a convertir -->
-      <span class="conversion-value">
-        1 metro
+      <!-- Título -->
+      <span class="conversion-title">
+        Conversor de unidades
       </span>
 
-      <!-- Botón que realizará la conversión -->
-      <button id="convert-button">
-        ▶ &nbsp; Convertir
-      </button>
+      <!-- Campo donde el usuario coloca
+           el número que quiere convertir -->
+      <input
+        type="number"
+        id="conversion-input"
+        placeholder="Ingresa un número"
+      >
 
-      <!-- Aquí aparecerá el resultado
-           después de presionar el botón -->
+      <!-- Contenedor de los cuatro botones -->
+      <div class="conversion-buttons">
+
+        <!-- Botón 1 -->
+        <button
+          id="millas-kilometros"
+          class="conversion-btn">
+          Millas → Kilómetros
+        </button>
+
+        <!-- Botón 2 -->
+        <button
+          id="kilometros-millas"
+          class="conversion-btn">
+          Kilómetros → Millas
+        </button>
+
+        <!-- Botón 3 -->
+        <button
+          id="metros-pulgadas"
+          class="conversion-btn">
+          Metros → Pulgadas
+        </button>
+
+        <!-- Botón 4 -->
+        <button
+          id="pulgadas-metros"
+          class="conversion-btn">
+          Pulgadas → Metros
+        </button>
+
+      </div>
+
+      <!-- Lugar donde se mostrará el resultado -->
       <span id="conversion-result"></span>
 
     </div>
