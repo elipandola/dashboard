@@ -698,3 +698,35 @@ header p{
 .pomodoro-btn:disabled:hover{
   transform:none;
 }
+
+/* --- Estilos para el widget de noticias (iteración 3) --- */
+.noticias-categoria {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.noticias-categoria label {
+  font-weight: 500;
+}
+
+.categoria-select {
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(79, 143, 176, 0.35);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.categoria-select:focus {
+  border-color: #4882a6;
+  box-shadow: 0 0 0 3px rgba(72, 130, 166, 0.18);
+}
