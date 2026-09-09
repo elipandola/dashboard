@@ -1,63 +1,52 @@
 /**
- * Widget 4: Diccionario en inglés
- * Consume la API de Datamuse para buscar definiciones de palabras en inglés.
+ * Widget 4: Diccionario en inglés - Grupo Bilingües
+ * Iteración 3: Búsqueda dinámica con Datamuse API (Sin bloqueos de CORS)
  */
 
-// Diccionario de tipos de palabras
-const tipos_palabra = {
-  n: 'noun',
-  v: 'verb',
-  adj: 'adjective',
-  adv: 'adverb'
-};
-
-// Función para buscar la definición de una palabra en la API
-async function buscar_palabra(palabra, titulo_elemento, tipo_elemento, definicion_elemento) {
+async function buscar_palabra(palabra, titulo_elemento, definicion_elemento, error_elemento) {
   const palabra_limpia = palabra.trim().toLowerCase();
-
-  // Si está vacía o contiene números, no hacemos la consulta
-  if (!palabra_limpia || /\d/.test(palabra_limpia)) {
-    return;
-  }
+  
+  // Estado de carga
+  titulo_elemento.textContent = "Buscando...";
+  definicion_elemento.textContent = "";
+  error_elemento.textContent = "";
 
   try {
-    const url = `https://api.datamuse.com/words?sp=${palabra_limpia}&md=d`;
+    // Usamos Datamuse API porque la anterior te está bloqueando (CORS error)
+    // 'md=d' pide la definición. 'max=1' trae solo el primer resultado.
+    const url = `https://api.datamuse.com/words?sp=${palabra_limpia}&md=d&max=1`;
+    
     const respuesta = await fetch(url);
     const datos = await respuesta.json();
 
-    // Buscamos si la palabra existe y tiene definiciones en los resultados
-    const resultado = datos.find(
-      (item) => item.word.toLowerCase() === palabra_limpia && item.defs
-    );
+    // Verificamos si la API encontró la palabra y si tiene definiciones
+    if (datos.length > 0 && datos[0].defs) {
+      const palabra_encontrada = datos[0].word;
+      
+      // La definición viene como "n\tdefinition", separamos el tipo del texto
+      const partes = datos[0].defs[0].split('\t');
+      const solo_definicion = partes[1] || partes[0];
 
-    if (resultado && resultado.defs.length > 0) {
-      // La API devuelve el tipo y la definición separados por un tabulador (ejemplo: "n\tDefinición...")
-      const partes = resultado.defs[0].split('\t');
-      const codigo_tipo = partes[0];
-      const texto_definicion = partes[1] || resultado.defs[0];
-
-      titulo_elemento.textContent = resultado.word;
-      tipo_elemento.textContent = tipos_palabra[codigo_tipo] || codigo_tipo;
-      definicion_elemento.textContent = texto_definicion.trim();
+      // ÉXITO: Mostramos los datos reales (NADA QUEMADO/HARDCODEADO)
+      titulo_elemento.textContent = palabra_encontrada.toUpperCase();
+      definicion_elemento.textContent = solo_definicion;
+      error_elemento.textContent = ""; 
     } else {
-      titulo_elemento.textContent = palabra_limpia;
-      tipo_elemento.textContent = 'sin resultados';
-      definicion_elemento.textContent = `No se encontró una definición para "${palabra_limpia}".`;
+      throw new Error("No encontrado");
     }
+
   } catch (error) {
-    console.error('Error al consultar la API:', error);
-    titulo_elemento.textContent = palabra_limpia;
-    tipo_elemento.textContent = 'error';
-    definicion_elemento.textContent = 'No se pudo conectar con el servicio del diccionario en este momento.';
+    // Requerimiento 6 y 10: "texto no encontrado"
+    titulo_elemento.textContent = "";
+    definicion_elemento.textContent = "";
+    error_elemento.textContent = "texto no encontrado";
   }
 }
 
-// Montar el widget
 function mount_dictionary_widget(container_id) {
   const contenedor = document.getElementById(container_id);
   if (!contenedor) return;
 
-  // Estructura HTML del widget
   contenedor.innerHTML = `
     <span class="tag">DICCIONARIO</span>
     <div class="dict-container">
@@ -67,68 +56,50 @@ function mount_dictionary_widget(container_id) {
           id="dict-input" 
           class="dict-input" 
           maxlength="50" 
-          placeholder="Buscar palabra..." 
+          placeholder="Escribe una palabra..." 
           autocomplete="off"
         >
-        <button id="dict-btn" class="dict-btn" type="button" disabled>Buscar</button>
+        <button id="dict-btn" class="dict-btn" type="button" disabled>Enviar</button>
       </div>
 
-      <div class="dict-result" id="dict-result">
-        <div class="word-header">
-          <h3 class="word-title">Developer</h3>
-          <span class="word-type">noun</span>
-        </div>
-        <p class="word-definition">
-          A person that develops software or multimedia applications.
-        </p>
+      <div class="dict-result" style="margin-top: 15px;">
+        <h3 class="word-title" style="color: #1f3b4d; font-family: 'Outfit', sans-serif;"></h3>
+        <p class="word-definition" id="word-def" style="color: #5c7a8a; font-size: 0.9rem; line-height: 1.4;"></p>
       </div>
+      
+      <p id="dict-error" style="color: #dc2626; font-size: 0.9rem; font-weight: bold; margin-top: 10px; text-align: center;"></p>
     </div>
   `;
 
-  // Obtenemos los elementos del DOM necesarios
   const input_palabra = contenedor.querySelector('#dict-input');
   const boton_buscar = contenedor.querySelector('#dict-btn');
   const titulo_palabra = contenedor.querySelector('.word-title');
-  const tipo_palabra = contenedor.querySelector('.word-type');
-  const definicion_palabra = contenedor.querySelector('.word-definition');
+  const definicion_palabra = contenedor.querySelector('#word-def');
+  const error_msg = contenedor.querySelector('#dict-error');
 
-  // Habilita o deshabilita el botón según el texto del input
-  function validar_boton() {
+  // Requerimiento 9: Validar que no haya números y no esté vacío
+  input_palabra.addEventListener('input', () => {
     const texto = input_palabra.value.trim();
     const tiene_numeros = /\d/.test(texto);
-    boton_buscar.disabled = !texto || tiene_numeros;
-  }
+    const solo_letras = /^[a-zA-Z\s]*$/.test(texto);
 
-  // Palabra estática
-  const palabra_estatica = 'developer';
-
-  // Ejecuta la búsqueda de la palabra
-  function ejecutar_busqueda() {
-    const texto = input_palabra.value.trim();
-    if (!texto || /\d/.test(texto)) return;
-
-    // Limpiamos el input y deshabilitamos el botón
-    input_palabra.value = '';
-    validar_boton();
-
-    // Se consulta la palabra estática
-    buscar_palabra(palabra_estatica, titulo_palabra, tipo_palabra, definicion_palabra);
-  }
-
-  input_palabra.addEventListener('input', validar_boton);
-  boton_buscar.addEventListener('click', ejecutar_busqueda);
-  input_palabra.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Enter') {
-      evento.preventDefault();
-      ejecutar_busqueda();
-    }
+    boton_buscar.disabled = !texto || tiene_numeros || !solo_letras;
+    error_msg.textContent = tiene_numeros ? "No se permiten números." : "";
   });
 
-  // Mostar la definición de la palabra estática
-  buscar_palabra(palabra_estatica, titulo_palabra, tipo_palabra, definicion_palabra);
+  function ejecutar() {
+    const palabra_usuario = input_palabra.value.trim();
+    buscar_palabra(palabra_usuario, titulo_palabra, definicion_palabra, error_msg);
+  }
+
+  boton_buscar.addEventListener('click', ejecutar);
+  
+  // Requerimiento 11: Enter para buscar
+  input_palabra.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !boton_buscar.disabled) ejecutar();
+  });
 }
 
-// Compatibilidad para index.html
 function mountDictionaryWidget(container_id) {
   mount_dictionary_widget(container_id);
 }
