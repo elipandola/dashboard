@@ -4,19 +4,14 @@
    ===================================================== */
 
 :root {
-
   --sky-top: #cfe8f7;
-
   --sky-mid: #e7f3fb;
-
   --sky-bottom: #f7fbfd;
 
   --ink: #1f3b4d;
-
   --ink-soft: #5c7a8a;
 
   --card-bg: rgba(255,255,255,0.55);
-
   --card-border: rgba(255,255,255,0.85);
 
   --accent: #4f8fb0;
@@ -36,18 +31,13 @@
    ===================================================== */
 
 * {
-
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
 }
 
-
 html,
 body {
-
   height: 100%;
 }
 
@@ -57,7 +47,6 @@ body {
    ===================================================== */
 
 body {
-
   font-family: 'Inter', sans-serif;
 
   color: var(--ink);
@@ -65,7 +54,6 @@ body {
   min-height: 100vh;
 
   background:
-
     radial-gradient(
       ellipse 60% 40% at 20% 0%,
       rgba(255,255,255,0.6),
@@ -105,7 +93,6 @@ body {
    ===================================================== */
 
 .cloud {
-
   position: fixed;
 
   border-radius: 50%;
@@ -120,9 +107,7 @@ body {
   z-index: 0;
 }
 
-
 .cloud.c1 {
-
   width: 280px;
 
   height: 120px;
@@ -132,9 +117,7 @@ body {
   left: -60px;
 }
 
-
 .cloud.c2 {
-
   width: 340px;
 
   height: 140px;
@@ -153,7 +136,6 @@ body {
    ===================================================== */
 
 header {
-
   width: 100%;
 
   max-width: 1240px;
@@ -164,9 +146,7 @@ header {
   z-index: 1;
 }
 
-
 header h1 {
-
   font-family:
     'Outfit', sans-serif;
 
@@ -182,9 +162,7 @@ header h1 {
     var(--ink);
 }
 
-
 header p {
-
   margin-top: 6px;
 
   font-size: 0.95rem;
@@ -201,7 +179,6 @@ header p {
    ===================================================== */
 
 .panel {
-
   width: 100%;
 
   max-width: 1240px;
@@ -209,9 +186,10 @@ header p {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(4, minmax(0, 1fr));
 
-  grid-auto-rows: 1fr;
+  grid-auto-rows:
+    1fr;
 
   gap:
     var(--gap);
@@ -228,7 +206,6 @@ header p {
    ===================================================== */
 
 .widget {
-
   background:
     var(--card-bg);
 
@@ -256,22 +233,24 @@ header p {
   padding:
     clamp(16px, 1.6vw, 22px);
 
-  min-height: 0;
+  min-width:
+    0;
+
+  min-height:
+    0;
 
   transition:
     transform .25s ease,
     box-shadow .25s ease;
 
-  /* Evita que el contenido
-     salga del widget */
-  overflow: hidden;
+  overflow:
+    hidden;
 }
 
 
 /* Efecto al pasar el mouse */
 
 .widget:hover {
-
   transform:
     translateY(-3px);
 
@@ -286,7 +265,6 @@ header p {
    ===================================================== */
 
 .widget .tag {
-
   font-family:
     'Outfit', sans-serif;
 
@@ -312,7 +290,6 @@ header p {
    ===================================================== */
 
 .widget .placeholder {
-
   align-self:
     flex-start;
 
@@ -329,7 +306,6 @@ header p {
    ===================================================== */
 
 .conversion-static {
-
   display: flex;
 
   flex-direction: column;
@@ -338,16 +314,17 @@ header p {
 
   justify-content: center;
 
-  /* Espacio reducido */
-  gap: 9px;
+  gap:
+    9px;
 
-  flex: 1;
+  flex:
+    1;
 
-  /* Mantiene el contenido
-     dentro del widget */
-  min-height: 0;
+  min-height:
+    0;
 
-  width: 100%;
+  width:
+    100%;
 
   font-family:
     'Outfit', sans-serif;
@@ -362,7 +339,6 @@ header p {
    ===================================================== */
 
 .conversion-title {
-
   font-size:
     1.15rem;
 
@@ -385,10 +361,11 @@ header p {
    ===================================================== */
 
 #conversion-input {
+  width:
+    70%;
 
-  width: 70%;
-
-  max-width: 160px;
+  max-width:
+    160px;
 
   padding:
     8px 12px;
@@ -420,11 +397,9 @@ header p {
 }
 
 
-/* Cuando seleccionamos
-   el campo */
+/* Cuando seleccionamos el campo */
 
 #conversion-input:focus {
-
   border-color:
     var(--accent);
 
@@ -439,21 +414,26 @@ header p {
    ===================================================== */
 
 .conversion-buttons {
+  width:
+    100%;
 
-  width: 100%;
+  display:
+    flex;
 
-  display: flex;
+  flex-direction:
+    column;
 
-  flex-direction: column;
+  align-items:
+    center;
 
-  align-items: center;
+  gap:
+    5px;
 
-  /* Poco espacio entre botones */
-  gap: 5px;
+  flex-shrink:
+    1;
 
-  flex-shrink: 1;
-
-  min-height: 0;
+  min-height:
+    0;
 }
 
 
@@ -462,11 +442,9 @@ header p {
    ===================================================== */
 
 .conversion-btn {
+  width:
+    82%;
 
-  /* Botones más pequeños */
-  width: 82%;
-
-  /* Menos altura */
   padding:
     6px 10px;
 
@@ -485,7 +463,6 @@ header p {
   font-family:
     'Outfit', sans-serif;
 
-  /* Texto pequeño */
   font-size:
     0.72rem;
 
@@ -503,9 +480,8 @@ header p {
     transform .2s ease,
     opacity .2s ease;
 
-  /* Evita que el botón
-     se deforme */
-  flex-shrink: 0;
+  flex-shrink:
+    0;
 }
 
 
@@ -514,7 +490,6 @@ header p {
    ===================================================== */
 
 .conversion-btn:hover {
-
   transform:
     translateY(-2px);
 
@@ -528,7 +503,6 @@ header p {
    ===================================================== */
 
 .conversion-btn:active {
-
   transform:
     translateY(0);
 }
@@ -539,19 +513,15 @@ header p {
    ===================================================== */
 
 #conversion-result {
-
-  /* Espacio reservado */
   min-height:
     34px;
 
-  /* Resultado más grande */
   font-family:
     'Outfit', sans-serif;
 
   font-size:
     1.15rem;
 
-  /* Resultado destacado */
   font-weight:
     600;
 
@@ -561,15 +531,12 @@ header p {
   text-align:
     center;
 
-  /* Mantiene el resultado
-     dentro del widget */
   max-width:
     95%;
 
   overflow-wrap:
     break-word;
 
-  /* Separación */
   margin-top:
     4px;
 
@@ -579,11 +546,176 @@ header p {
 
 
 /* =====================================================
-   CONTADOR ANTERIOR
+   WIDGET 5 - RELOJ
+   ===================================================== */
+
+#widget-05 {
+  position:
+    relative;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-color:
+    #4882a6;
+}
+
+#widget-05 .tag {
+  position:
+    absolute;
+
+  top:
+    clamp(16px, 1.6vw, 22px);
+}
+
+#widget-05 .clock-content {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    clamp(8px, 1vw, 12px);
+
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  height:
+    100%;
+}
+
+#widget-05 h1 {
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    nowrap;
+
+  white-space:
+    nowrap;
+
+  color:
+    #4f92b8;
+
+  font-family:
+    'Courier New', monospace;
+
+  font-size:
+    clamp(2rem, 4vw, 3.25rem);
+
+  font-weight:
+    700;
+
+  line-height:
+    1;
+
+  font-variant-numeric:
+    tabular-nums;
+
+  letter-spacing:
+    0.02em;
+
+  text-align:
+    center;
+
+  max-width:
+    100%;
+
+  min-width:
+    0;
+
+  border-bottom:
+    3px solid #4f92b8;
+}
+
+#widget-05 .clock-meridiem {
+  margin-left:
+    0.35em;
+
+  color:
+    #4f92b8;
+
+  font-family:
+    'Outfit', sans-serif;
+
+  font-size:
+    0.32em;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0;
+}
+
+#widget-05 .clock-toggle {
+  border:
+    1px solid #0369a1;
+
+  border-radius:
+    9999px;
+
+  padding:
+    7px 16px;
+
+  background:
+    #0369a1;
+
+  color:
+    #cfe8f7;
+
+  font:
+    500 0.75rem 'Outfit', sans-serif;
+
+  cursor:
+    pointer;
+
+  transition:
+    background .2s ease,
+    transform .15s ease;
+}
+
+#widget-05 .clock-toggle:hover {
+  background:
+    #075985;
+
+  transform:
+    translateY(-1px);
+}
+
+#widget-05 .clock-toggle:focus-visible {
+  outline:
+    2px solid #4f92b8;
+
+  outline-offset:
+    2px;
+}
+
+
+/* =====================================================
+   CONTADOR
    ===================================================== */
 
 .counter {
-
   display:
     flex;
 
@@ -597,9 +729,7 @@ header p {
     18px;
 }
 
-
 .counter-value {
-
   font-family:
     'Outfit', sans-serif;
 
@@ -619,9 +749,7 @@ header p {
     center;
 }
 
-
 .counter-btn {
-
   width:
     34px;
 
@@ -655,9 +783,7 @@ header p {
     transform .15s ease;
 }
 
-
 .counter-btn:hover {
-
   background:
     rgba(255,255,255,0.9);
 
@@ -665,11 +791,1006 @@ header p {
     translateY(-1px);
 }
 
-
 .counter-btn:active {
-
   transform:
     translateY(0);
+}
+
+
+/* =====================================================
+   WIDGET 2 - TO DO
+   ===================================================== */
+
+.todo-form {
+  display:
+    flex;
+
+  gap:
+    8px;
+
+  margin-top:
+    10px;
+}
+
+.todo-input {
+  flex:
+    1;
+
+  min-width:
+    0;
+
+  padding:
+    8px 10px;
+
+  border-radius:
+    10px;
+
+  border:
+    1px solid var(--card-border);
+
+  background:
+    rgba(255,255,255,0.6);
+
+  font-family:
+    'Inter', sans-serif;
+
+  font-size:
+    0.85rem;
+
+  color:
+    var(--ink);
+}
+
+.todo-input:focus {
+  outline:
+    none;
+
+  border-color:
+    var(--accent);
+}
+
+.todo-add-btn {
+  padding:
+    8px 14px;
+
+  border-radius:
+    10px;
+
+  border:
+    none;
+
+  background:
+    var(--accent);
+
+  color:
+    #fff;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    500;
+
+  cursor:
+    pointer;
+
+  transition:
+    background .2s ease,
+    transform .15s ease;
+}
+
+.todo-add-btn:hover {
+  transform:
+    translateY(-1px);
+
+  background:
+    #437c9b;
+}
+
+.todo-error {
+  font-size:
+    0.72rem;
+
+  color:
+    #c0524a;
+
+  min-height:
+    1em;
+
+  margin-top:
+    4px;
+}
+
+.todo-list {
+  list-style:
+    none;
+
+  margin-top:
+    8px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    6px;
+
+  overflow-y:
+    auto;
+}
+
+.todo-item {
+  background:
+    rgba(255,255,255,0.6);
+
+  border:
+    1px solid var(--card-border);
+
+  border-radius:
+    8px;
+
+  font-size:
+    0.82rem;
+
+  color:
+    var(--ink);
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  padding:
+    2px 6px;
+}
+
+.todo-item button {
+  background-color:
+    #f4a6a6;
+
+  border:
+    none;
+
+  color:
+    #7a2020;
+
+  padding:
+    2px 6px;
+
+  border-radius:
+    6px;
+
+  cursor:
+    pointer;
+}
+
+.todo-item button:hover {
+  background-color:
+    #ee8f8f;
+}
+
+
+/* =====================================================
+   WIDGET 4 - DICCIONARIO
+   ===================================================== */
+
+.dict-container {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    10px;
+
+  margin-top:
+    8px;
+
+  width:
+    100%;
+
+  flex:
+    1;
+
+  min-height:
+    0;
+}
+
+.dict-search-box {
+  display:
+    flex;
+
+  gap:
+    8px;
+
+  align-items:
+    center;
+
+  width:
+    100%;
+}
+
+.dict-input {
+  flex:
+    1;
+
+  min-width:
+    0;
+
+  padding:
+    8px 12px;
+
+  font-family:
+    'Inter', sans-serif;
+
+  font-size:
+    0.85rem;
+
+  color:
+    var(--ink);
+
+  background:
+    rgba(255,255,255,0.75);
+
+  border:
+    1px solid rgba(79,143,176,0.35);
+
+  border-radius:
+    12px;
+
+  outline:
+    none;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+
+  box-sizing:
+    border-box;
+}
+
+.dict-input:focus {
+  border-color:
+    #4882a6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(72,130,166,0.18);
+
+  background:
+    #ffffff;
+}
+
+.dict-btn {
+  padding:
+    8px 16px;
+
+  font-family:
+    'Outfit', sans-serif;
+
+  font-weight:
+    500;
+
+  font-size:
+    0.85rem;
+
+  color:
+    #ffffff;
+
+  background:
+    #4882a6;
+
+  border:
+    none;
+
+  border-radius:
+    12px;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 4px 10px
+    rgba(72,130,166,0.28);
+
+  transition:
+    background .2s ease;
+
+  white-space:
+    nowrap;
+
+  flex-shrink:
+    0;
+}
+
+.dict-btn:hover {
+  background:
+    #3a6f8f;
+
+  transform:
+    none;
+}
+
+.dict-btn:active {
+  background:
+    #2f5a75;
+
+  transform:
+    none;
+}
+
+.dict-btn:disabled {
+  opacity:
+    0.5;
+
+  cursor:
+    not-allowed;
+
+  box-shadow:
+    none;
+
+  background:
+    #7ca8c4;
+}
+
+.dict-btn:disabled:hover {
+  background:
+    #7ca8c4;
+}
+
+.dict-result {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    6px;
+
+  padding-top:
+    4px;
+
+  overflow-y:
+    auto;
+
+  min-height:
+    0;
+}
+
+.dict-result::-webkit-scrollbar {
+  width:
+    4px;
+}
+
+.dict-result::-webkit-scrollbar-thumb {
+  background:
+    rgba(72,130,166,0.25);
+
+  border-radius:
+    4px;
+}
+
+.dict-result .word-header {
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  gap:
+    8px;
+
+  flex-wrap:
+    wrap;
+}
+
+.dict-result .word-title {
+  font-family:
+    'Outfit', sans-serif;
+
+  font-size:
+    1.25rem;
+
+  font-weight:
+    600;
+
+  color:
+    var(--ink);
+
+  margin:
+    0;
+
+  word-break:
+    break-word;
+}
+
+.dict-result .word-type {
+  font-size:
+    0.75rem;
+
+  font-style:
+    italic;
+
+  color:
+    #4882a6;
+
+  background:
+    rgba(72,130,166,0.12);
+
+  padding:
+    2px 8px;
+
+  border-radius:
+    6px;
+
+  font-weight:
+    500;
+}
+
+.dict-result .word-definition {
+  font-size:
+    0.85rem;
+
+  line-height:
+    1.4;
+
+  color:
+    var(--ink-soft);
+
+  margin:
+    0;
+}
+
+
+/* =====================================================
+   WIDGET 3 - CALCULADORA
+   ===================================================== */
+
+.calc-container {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    8px;
+
+  margin-top:
+    10px;
+}
+
+.calc-input {
+  padding:
+    10px 12px;
+
+  border-radius:
+    10px;
+
+  border:
+    1px solid rgba(79,143,176,0.35);
+
+  outline:
+    none;
+
+  font-family:
+    'Inter', sans-serif;
+
+  font-size:
+    14px;
+
+  color:
+    var(--ink);
+
+  background:
+    rgba(255,255,255,0.75);
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.calc-input:focus {
+  border-color:
+    #4882a6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(72,130,166,.18);
+
+  background:
+    #fff;
+}
+
+.calc-ops-row {
+  display:
+    flex;
+
+  gap:
+    8px;
+
+  margin-top:
+    4px;
+}
+
+.calc-btn {
+  flex:
+    1;
+
+  padding:
+    10px;
+
+  cursor:
+    pointer;
+
+  border-radius:
+    12px;
+
+  border:
+    none;
+
+  background-color:
+    #4f92b8;
+
+  color:
+    white;
+
+  font-family:
+    'Outfit', sans-serif;
+
+  font-weight:
+    600;
+
+  font-size:
+    16px;
+
+  transition:
+    background .2s ease,
+    transform .15s ease,
+    box-shadow .2s ease;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+.calc-btn:hover {
+  background:
+    #3a6f8f;
+
+  transform:
+    translateY(-1px);
+}
+
+.calc-btn:active {
+  transform:
+    translateY(0);
+}
+
+.calc-btn.selected {
+  background:
+    #386e8e;
+
+  box-shadow:
+    0 0 0 2px #264e66;
+}
+
+.calc-btn-equals {
+  flex:
+    1;
+
+  padding:
+    10px;
+
+  cursor:
+    pointer;
+
+  border-radius:
+    12px;
+
+  border:
+    2px solid #fff;
+
+  background:
+    #fff;
+
+  color:
+    #4f92b8;
+
+  font-family:
+    'Outfit', sans-serif;
+
+  font-weight:
+    600;
+
+  font-size:
+    16px;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .15s ease,
+    box-shadow .2s ease;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+.calc-btn-equals:hover {
+  background:
+    #eaf4f9;
+
+  color:
+    #3a6f8f;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 4px 10px
+    rgba(72,130,166,.28);
+}
+
+.calc-btn-equals:active {
+  transform:
+    translateY(0);
+}
+
+.calc-result-container {
+  margin-top:
+    2px;
+
+  font-family:
+    'Outfit', sans-serif;
+
+  font-weight:
+    600;
+
+  font-size:
+    0.95rem;
+
+  color:
+    var(--ink);
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  line-height:
+    1.1;
+}
+
+.calc-result {
+  color:
+    var(--accent);
+
+  font-weight:
+    700;
+}
+
+.calc-history {
+  font-family:
+    'Outfit', sans-serif;
+
+  font-weight:
+    600;
+
+  font-size:
+    0.95rem;
+
+  color:
+    var(--ink);
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  line-height:
+    1.1;
+}
+
+.calc-history-value {
+  color:
+    var(--accent);
+
+  font-weight:
+    700;
+}
+
+
+/* =====================================================
+   WIDGET 8 - POMODORO
+   ===================================================== */
+
+.pomodoro {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    24px;
+
+  flex:
+    1;
+}
+
+.pomodoro-circle {
+  width:
+    150px;
+
+  height:
+    150px;
+
+  border-radius:
+    50%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  background:
+    rgba(255,255,255,0.45);
+
+  border:
+    6px solid rgba(79,145,184,0.18);
+
+  box-shadow:
+    0 8px 22px rgba(45,78,99,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.7);
+}
+
+.pomodoro-time {
+  font-family:
+    'Outfit', sans-serif;
+
+  font-size:
+    2.7rem;
+
+  font-weight:
+    600;
+
+  color:
+    var(--ink);
+
+  letter-spacing:
+    1px;
+}
+
+.pomodoro-actions {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    10px;
+}
+
+.pomodoro-btn {
+  border:
+    none;
+
+  border-radius:
+    12px;
+
+  background:
+    #4f91b8;
+
+  color:
+    white;
+
+  font-family:
+    'Inter', sans-serif;
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    500;
+
+  padding:
+    11px 24px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 5px 14px
+    rgba(49,98,127,0.18);
+
+  transition:
+    background .2s ease,
+    transform .15s ease,
+    box-shadow .2s ease;
+}
+
+.pomodoro-btn:hover {
+  background:
+    #427fa3;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(49,98,127,0.23);
+}
+
+.pomodoro-btn:active {
+  transform:
+    translateY(0);
+}
+
+.pomodoro-btn:disabled {
+  opacity:
+    0.45;
+
+  cursor:
+    not-allowed;
+
+  transform:
+    none;
+
+  box-shadow:
+    none;
+}
+
+.pomodoro-btn:disabled:hover {
+  background:
+    #4f91b8;
+
+  transform:
+    none;
+}
+
+.pomodoro-play {
+  font-size:
+    0.75rem;
+}
+
+.pomodoro-btn-secondary {
+  background:
+    rgba(255,255,255,0.55);
+
+  color:
+    #4f91b8;
+
+  border:
+    1px solid rgba(79,145,184,0.18);
+
+  box-shadow:
+    none;
+}
+
+.pomodoro-btn-secondary:hover {
+  background:
+    rgba(255,255,255,0.85);
+}
+
+
+/* =====================================================
+   WIDGET 1 - NOTICIAS
+   ===================================================== */
+
+.noticias-categoria {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  margin:
+    8px 0;
+
+  font-size:
+    0.85rem;
+
+  color:
+    var(--ink-soft);
+}
+
+.noticias-categoria label {
+  font-weight:
+    500;
+}
+
+.categoria-select {
+  padding:
+    4px 8px;
+
+  border-radius:
+    8px;
+
+  border:
+    1px solid rgba(79,143,176,0.35);
+
+  background:
+    rgba(255,255,255,0.75);
+
+  color:
+    var(--ink);
+
+  font-family:
+    'Inter', sans-serif;
+
+  font-size:
+    0.85rem;
+
+  cursor:
+    pointer;
+
+  outline:
+    none;
+
+  transition:
+    border-color .2s ease;
+}
+
+.categoria-select:focus {
+  border-color:
+    #4882a6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(72,130,166,0.18);
 }
 
 
@@ -680,7 +1801,6 @@ header p {
 @media (max-width: 900px) {
 
   .panel {
-
     grid-template-columns:
       repeat(2, 1fr);
 
@@ -697,7 +1817,6 @@ header p {
 @media (max-width: 520px) {
 
   .panel {
-
     grid-template-columns:
       1fr;
 
@@ -705,20 +1824,12 @@ header p {
       auto;
   }
 
-
   .widget {
-
     min-height:
       140px;
   }
 
-
-  /* En pantallas pequeñas
-     reducimos un poco más
-     los botones */
-
   .conversion-btn {
-
     width:
       85%;
 
@@ -729,9 +1840,7 @@ header p {
       6px 8px;
   }
 
-
   #conversion-result {
-
     font-size:
       1rem;
   }
