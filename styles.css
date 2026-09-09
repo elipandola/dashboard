@@ -456,7 +456,7 @@ header p{
 .calc-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   margin-top: 10px;
 }
 
@@ -544,7 +544,7 @@ header p{
 }
 
 .calc-result-container {
-  margin-top: 4px;
+  margin-top: 2px;
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
@@ -552,9 +552,26 @@ header p{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: 1.1;
 }
 
 .calc-result {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.calc-history {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.calc-history-value {
   color: var(--accent);
   font-weight: 700;
 }
