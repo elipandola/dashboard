@@ -91,6 +91,7 @@ header p{
   min-width:0;
   min-height:0;
   transition: transform .25s ease, box-shadow .25s ease;
+  overflow:hidden;
 }
 
 .widget:hover{
@@ -112,6 +113,115 @@ header p{
   font-size:0.8rem;
   color:var(--ink-soft);
 }
+
+
+/* =====================================================
+   BRN_CONVERSOR
+   ===================================================== */
+
+.conversion-static{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  flex:1;
+  min-height:0;
+  width:100%;
+  font-family:'Outfit', sans-serif;
+  color:var(--ink);
+}
+
+
+/* Título del conversor */
+
+.conversion-title{
+  font-size:1.15rem;
+  font-weight:500;
+  color:var(--ink);
+  text-align:center;
+  line-height:1.2;
+}
+
+
+/* Campo para ingresar el número */
+
+#conversion-input{
+  width:70%;
+  max-width:160px;
+  padding:8px 12px;
+  border:1px solid rgba(79,143,176,0.35);
+  border-radius:11px;
+  background:rgba(255,255,255,0.75);
+  color:var(--ink);
+  font-family:'Outfit', sans-serif;
+  font-size:0.95rem;
+  text-align:center;
+  outline:none;
+}
+
+#conversion-input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(79,143,176,0.12);
+}
+
+
+/* Contenedor de botones */
+
+.conversion-buttons{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  flex-shrink:1;
+  min-height:0;
+}
+
+
+/* Botones de conversión */
+
+.conversion-btn{
+  width:82%;
+  padding:6px 10px;
+  border:none;
+  border-radius:10px;
+  background:#5298bd;
+  color:white;
+  font-family:'Outfit', sans-serif;
+  font-size:0.72rem;
+  font-weight:500;
+  cursor:pointer;
+  box-shadow:0 5px 12px rgba(82,152,189,0.20);
+  transition:transform .2s ease, opacity .2s ease;
+  flex-shrink:0;
+}
+
+.conversion-btn:hover{
+  transform:translateY(-2px);
+  opacity:0.9;
+}
+
+.conversion-btn:active{
+  transform:translateY(0);
+}
+
+
+/* Resultado */
+
+#conversion-result{
+  min-height:34px;
+  font-family:'Outfit', sans-serif;
+  font-size:1.15rem;
+  font-weight:600;
+  color:var(--ink);
+  text-align:center;
+  max-width:95%;
+  overflow-wrap:break-word;
+  margin-top:4px;
+  line-height:1.25;
+}
+
 
 #widget-05{
   position:relative;
@@ -185,6 +295,7 @@ header p{
   outline-offset:2px;
 }
 
+
 /* --- estilos del widget de ejemplo: contador --- */
 .counter{
   display:flex;
@@ -230,12 +341,26 @@ header p{
     aspect-ratio: 2 / 4;
   }
 }
+
 @media (max-width: 520px){
   .panel{
     grid-template-columns: 1fr;
     aspect-ratio: auto;
   }
-  .widget{ min-height:140px; }
+
+  .widget{
+    min-height:140px;
+  }
+
+  .conversion-btn{
+    width:85%;
+    font-size:0.7rem;
+    padding:6px 8px;
+  }
+
+  #conversion-result{
+    font-size:1rem;
+  }
 }
 
 
@@ -452,6 +577,7 @@ header p{
   margin: 0;
 }
 
+
 /* --- Calculator widget styles --- */
 .calc-container {
   display: flex;
@@ -575,6 +701,8 @@ header p{
   color: var(--accent);
   font-weight: 700;
 }
+
+
 /* --- Widget 8: Pomodoro --- */
 
 .pomodoro{
@@ -730,3 +858,4 @@ header p{
   border-color: #4882a6;
   box-shadow: 0 0 0 3px rgba(72, 130, 166, 0.18);
 }
+

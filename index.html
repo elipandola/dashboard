@@ -1,12 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Panel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -39,7 +47,7 @@
       <span class="placeholder">Contenido pendiente</span>
     </div>
     <div class="widget" id="widget-6">
-      <span class="tag">Widget 06</span>
+      <span class="tag">CONVERSOR</span>
       <span class="placeholder">Contenido pendiente</span>
     </div>
     <div class="widget" id="widget-7">
@@ -50,46 +58,75 @@
       <span class="tag">Widget 08</span>
       <span class="placeholder">Contenido pendiente</span>
     </div>
+
   </main>
 
-  <!-- Ejemplo: cargar un widget desde otro archivo JS e insertarlo -->
-  <!-- <script src="counter-widget.js"></script>
+
+  <!-- TU CAMBIO: CONVERSOR -->
+
+  <script src="converter-content.js"></script>
+
+  <script src="converter-widget.js"></script>
+
   <script>
-    // El widget de contador se monta sobre el widget-1
-    mountCounterWidget('widget-1');
-  </script> -->
-<script src="noticias-widget-v3.js"></script>
+    mountConverterWidget('widget-6');
+  </script>
+
+
+  <!-- WIDGET DE NOTICIAS -->
+
+  <script src="noticias-widget-v3.js"></script>
+
   <script>
     mountNewsWidget('widget-1');
   </script>
 
+
+  <!-- WIDGET POMODORO -->
+
   <script src="pomodoro-widget.js"></script>
-<script>
-  mountPomodoroWidget('widget-8');
-</script>
+
+  <script>
+    mountPomodoroWidget('widget-8');
+  </script>
 
 
+  <!-- WIDGET LISTA DE TAREAS -->
 
   <script src="todo-widget.js"></script>
+
   <script>
     mountTodoWidget('widget-2');
   </script>
 
+
+  <!-- WIDGET CALCULADORA -->
+
   <script src="calculator-widget.js"></script>
+
   <script>
     mountCalculatorWidget('widget-3');
   </script>
 
+
+  <!-- WIDGET DICCIONARIO -->
+
   <script src="dictionary-widget.js"></script>
+
   <script>
     mountDictionaryWidget('widget-4');
   </script>
-</body>
-  </script> 
+
+
+  <!-- WIDGET RELOJ -->
 
   <script src="clock-widget.js"></script>
-  <script>mountClockWidget('widget-05');</script>
-    
-  
-</body>    
+
+  <script>
+    mountClockWidget('widget-05');
+  </script>
+
+</body>
+
 </html>
+```
